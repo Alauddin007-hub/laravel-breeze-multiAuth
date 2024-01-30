@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'marketing' => [
+            'driver' => 'session',
+            'provider' => 'marketing_officer',
+        ],
     ],
 
     /*
@@ -71,6 +75,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+        'marketing_officer' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Marketing_officer::class,
         ],
 
         // 'users' => [
@@ -107,6 +115,12 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'marketing_officer' => [
+            'provider' => 'marketing_officer',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

@@ -357,9 +357,17 @@
                 <li>
                   <div class="dropdown-divider mb-0"></div>
                 </li>
-                <li><a class="dropdown-item" href="javascript:;"><span class="material-symbols-outlined me-2">
+                <li>
+                  <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+
+                  <a class="dropdown-item" href="javascript:;"><span class="material-symbols-outlined me-2">
                   logout
-                  </span><span>Logout</span></a>
+                  </span>
+                  <button type="submit" style="border:none; outline:none" class="btn 
+                  btn-dark"><span>Logout</span></button>
+                </a>
+                  </form>
                 </li>
               </ul>
           </div>
